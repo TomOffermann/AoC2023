@@ -1,4 +1,5 @@
 const fs = require("fs");
+
 let input = fs.readFileSync("./input.txt").toString();
 input = input.split("\n");
 input = input.map((e) => e.split(":")[1].split(";"));
@@ -24,31 +25,19 @@ for (let i = 0; i < input.length; i++) {
   };
   for (let set = 0; set < input[i].length; set++) {
     for (let element = 0; element < input[i][set].length; element++) {
-      //console.log(input[i][set][element]);
       switch (input[i][set][element][1]) {
         case "red":
-          fset["red"] = Math.max(
-            fset["red"],
-            parseInt(input[i][set][element][0])
-          );
+          fset["red"] = Math.max(fset["red"], parseInt(input[i][set][element][0]));
           break;
         case "green":
-          fset["green"] = Math.max(
-            fset["green"],
-            parseInt(input[i][set][element][0])
-          );
+          fset["green"] = Math.max(fset["green"], parseInt(input[i][set][element][0]));
           break;
         case "blue":
-          fset["blue"] = Math.max(
-            fset["blue"],
-            parseInt(input[i][set][element][0])
-          );
+          fset["blue"] = Math.max(fset["blue"], parseInt(input[i][set][element][0]));
           break;
       }
     }
-    //console.log("---")
   }
-  //console.log(fset);
   if (isValid(fset)) {
     result1 += i + 1;
   }
