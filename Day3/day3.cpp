@@ -58,6 +58,7 @@ int main() {
         std::vector<int> gear;
         line.push_back(str[i] == '.' ? 0 : 1);
         if(str[i] == '*') {
+          // gear = [x, y]
           gear.push_back(map.size());
           gear.push_back(i);
           gears.push_back(gear);
@@ -79,10 +80,13 @@ int main() {
           int n = stoi(mapC[i].substr(start, end-start));
           res_1 += n;
           std::vector<int> partNum;
+
+          // partNum = [i, start, end, number]
           partNum.push_back(i);
           partNum.push_back(start);
           partNum.push_back(end);
           partNum.push_back(n);
+
           partNums.push_back(partNum);
         }
         j = end;
@@ -97,7 +101,6 @@ int main() {
         connectedNums.push_back(partNums[j][3]);
       }
     }
-    std::cout << connectedNums.size() << std::endl;
     if(connectedNums.size() == 2) {
       res_2 += (connectedNums[0] * connectedNums[1]);
     }
