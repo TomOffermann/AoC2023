@@ -39,7 +39,7 @@ int main() {
     }
   }
 
-  res_2 = combs + 1;
+  res_2 = combs;
 
-  std::cout << "Task 1: " << res_1 << ", Task 2: " << res_2 - 1 << std::endl;
+  std::cout << "Task 1: " << res_1 << ", Task 2: " << res_2 << std::endl;
 }
